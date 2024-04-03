@@ -1,6 +1,6 @@
 'use strict'
 
-// 1. Define Submit&Cancel Button Constant
+// Define Submit&Cancel Button Constant
 
 const submitBtn = document.getElementById("submit-btn"); // object | null
 
@@ -10,27 +10,25 @@ const cancelBtn = document.getElementById("cancel-btn"); // object | null
 
 // console.log(cancelBtn, typeof cancelBtn);
 
-// 2. Define User Email Constant
-
-const userEmail = (document.getElementById ("user-email")).value; // string
-
-// console.log(userEmail, typeof userEmail, "email Input");
-
-// 3. Define Array of valid emails
+// Define Array of valid emails
 
 const validEmails = ["email1@gmail.com", "email2@gmail.com", "email3@gmail.com", "email4@gmail.com", "email5@gmail.com"]; // array
 
 console.log(validEmails, typeof validEmails);
 
-// 4. Define Global variable for email check
+// Define Global variable for email check
 
 let validEmail = false; //boolean
 
 console.log(validEmail, typeof validEmail);
 
-// 5. Add Event listener to the Button Submit
+// Add Event listener to the Button Submit
 
 submitBtn.addEventListener("click", function() {
+
+    const userEmail = (document.getElementById ("user-email")).value; // string
+
+    console.log(userEmail, typeof userEmail, "email Input");
 
     for (let i = 0; i < validEmails.length; i++) {
 
@@ -47,26 +45,26 @@ submitBtn.addEventListener("click", function() {
         }
         
         console.log(validEmail, typeof validEmail, "in For");
+
+        console.log(validEmail, typeof validEmail);
+
+        if (!validEmail) {
+         
+            document.getElementById("result").innerHTML = "Invalid Data";
      
-    };
-
-    console.log(validEmail, typeof validEmail);
-
-    if (validEmail = false) {
-     
-        document.getElementById("result").innerHTML = "Invalid Data";
- 
-    } else if (validEmail = true) {
-
-        document.getElementById("result").innerHTML = "Valid Email";
+        } else if (validEmail) {
+    
+            document.getElementById("result").innerHTML = "Valid Email";
+    
+        };
+    
+        document.getElementById("result-box").classList.remove("hidden");
 
     };
-
-    document.getElementById("result-box").classList.remove("hidden");
 
 });
 
-// 6. Add Event listener to the Button Cancel
+// Add Event listener to the Button Cancel
 
 cancelBtn.addEventListener("click", function () {
 
